@@ -1,6 +1,9 @@
 *** Settings ***
 Documentation     This is a resource file that includes other resource files for testing the functionality of the application.
-Library           SeleniumLibrary
+Resource          lib_handler.resource
+Library          python${/}QADemo_helper.py
+# Nazwa klasy MUSI być taka sama jak nazwa pliku!
+Library          python${/}QADemoHelperClass.py
 
 
 *** Variables ***
@@ -65,6 +68,7 @@ Navigate To Main Page
 Text Box: Fill Form
     [Documentation]    This keyword fills the text box form with the provided data.
     [Arguments]    ${full_name}    ${email}    ${current_address}    ${permanent_address}
+    # cleanup parametrów za pomoca wydzielenia modułów jako osobone resource'y -> QADemoSelenium_Text_Box.resource
     SeleniumLibrary.Input Text    id=userName    ${full_name}
     SeleniumLibrary.Input Text    id=userEmail    ${email}
     SeleniumLibrary.Input Text    id=currentAddress    ${current_address}
@@ -87,3 +91,6 @@ Text Box: Verify Output
     Should Contain    ${actual_output}    Email:${email}
     Should Contain    ${actual_output}    Current Address :${current_address}
     Should Contain    ${actual_output}    Permananet Address :${permanent_address}
+    # podłaczenie python do RFW za pomocą "płaskiego" pliku python składającego się tylko z funkcji
+    Text Box Verify Output    ${actual_output}    ${full_name}    ${email}    ${current_address}    ${permanent_address}
+    Text Box Verify Output2    ${actual_output}    ${full_name}    ${email}    ${current_address}    ${permanent_address}

@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation     This is a resource file that includes other resource files for testing the functionality of the application.
-Resource          ../Resources/handler.resource
+Resource          ..${/}Resources${/}handler.resource
 
 *** Test Cases ***
 Test Case 1

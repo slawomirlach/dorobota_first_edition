@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation     This is a resource file that includes other resource files for testing the functionality of the application.
-Resource    ../Resources/handler.resource
+Resource    ..${/}Resources${/}handler.resource
 
 
 # python -m  robot -L TRACE -i test_2 -v BROWSER:chrome C:\Users\arturj\test\dorobota_first_edition\Tests\QADemo_test.robot
@@ -19,7 +19,6 @@ Test Case 1
 Test Case 2
     [Documentation]    GUI Demo QA    
     [Tags]    test_2
-    Log    ${MOJE}
     QADemoSelenium.Main: Navigate To Elements Page
     QADemoSelenium.Elements: Navigate To Text Box
     QADemoSelenium.Text Box: Fill Form    John Doe    john.doe@example.com    123 Main St    456 Elm St
