@@ -1,4 +1,5 @@
 *** Settings ***
-Resource          Resources/adv_keywords.resource
-Resource          Resources/basic_keywords.resource
-Resource          Resources/tbd.resource
+Resource          adv_keywords.resource
+Resource          basic_keywords.resource
+Resource          tbd.resource
+Resource          PetStore_REST_API.resource

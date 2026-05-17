@@ -2,7 +2,7 @@
 Documentation     This is a test suite for Browser library.
 # dodane # po ciwiczeniu z handlerem w Resource
 # Resource          Resources/basic_keywords.resource
-Resource          Resources/handler.resource
+Resource          ../Resources/handler.resource
 
 Suite Setup
 Suite Teardown
